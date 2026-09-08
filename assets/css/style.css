@@ -218,6 +218,9 @@ select:focus-visible {
 }
 
 /* ---------- Navbar ---------- */
+.fa-bars:before, .fa-navicon:before {
+    color: antiquewhite;
+}
 .navbar-luxe {
   position: fixed;
   top: 0;
