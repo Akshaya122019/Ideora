@@ -223,35 +223,52 @@ $(function () {
   });
 
   /* ---------- Contact form validation ---------- */
-  $('#contactForm').on('submit', function (e) {
-    e.preventDefault();
-    var valid = true;
-    var $form = $(this);
-    $form.find('.form-control').each(function () {
-      var $f = $(this);
-      var val = $f.val().trim();
-      var ok = true;
-      if ($f.attr('required') && !val) ok = false;
-      if ($f.attr('type') === 'email' && val) {
-        ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
-      }
-      if ($f.attr('type') === 'tel' && val) {
-        ok = /^[0-9+\-\s()]{7,}$/.test(val);
-      }
-      $f.toggleClass('is-invalid', !ok).toggleClass('is-valid', ok && val);
-      if (!ok) valid = false;
-    });
-    if (!valid) return;
+ /* ---------- Contact form validation + WhatsApp send ---------- */
+$('#contactForm').on('submit', function (e) {
+  e.preventDefault();
+  var valid = true;
+  var $form = $(this);
 
-    var $btn = $form.find('button[type="submit"]');
-    $btn.prop('disabled', true).html('<i class="fa-solid fa-spinner fa-spin"></i> Sending...');
-    setTimeout(function () {
-      $form.fadeOut(250, function () {
-        $('.form-success').fadeIn(350);
-      });
-      $btn.prop('disabled', false);
-    }, 900);
+  $form.find('.form-control').each(function () {
+    var $f = $(this);
+    var val = $f.val().trim();
+    var ok = true;
+    if ($f.attr('required') && !val) ok = false;
+    if ($f.attr('type') === 'tel' && val) {
+      ok = /^[0-9+\-\s()]{7,}$/.test(val);
+    }
+    $f.toggleClass('is-invalid', !ok).toggleClass('is-valid', ok && val);
+    if (!ok) valid = false;
   });
+
+  if (!valid) return;
+
+  var name = $form.find('[name="name"]').val().trim();
+  var phone = $form.find('[name="phone"]').val().trim();
+  var country = $form.find('[name="country"]').val().trim();
+  var qualification = $form.find('[name="qualification"]').val().trim();
+  var message = $form.find('[name="message"]').val().trim();
+
+  var text = "New enquiry from website:%0A%0A" +
+    "*Name:* " + name + "%0A" +
+    "*Phone:* " + phone + "%0A" +
+    "*Preferred Country:* " + country + "%0A" +
+    "*Qualification:* " + qualification + "%0A" +
+    "*Message:* " + message;
+
+  var companyNumber = "919944688648"; // replace with real number: country code + number, digits only
+
+  var $btn = $form.find('button[type="submit"]');
+  $btn.prop('disabled', true).html('<i class="fa-solid fa-spinner fa-spin"></i> Sending...');
+
+  setTimeout(function () {
+    window.open("https://wa.me/" + companyNumber + "?text=" + text, "_blank");
+    $form.fadeOut(250, function () {
+      $('.form-success').fadeIn(350);
+    });
+    $btn.prop('disabled', false).html('Send Message <i class="fa-solid fa-paper-plane"></i>');
+  }, 600);
+});
 
   /* ---------- Floating "back to top" ---------- */
   $('.fab-top').on('click', function () { $('html, body').animate({ scrollTop: 0 }, 600); });

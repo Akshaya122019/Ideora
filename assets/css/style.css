@@ -172,7 +172,7 @@ select:focus-visible {
   align-items: center;
   gap: 10px;
   padding: 15px 30px;
-  border-radius: 100px;
+  border-radius: 50px;
   font-weight: 700;
   font-size: .92rem;
   letter-spacing: .01em;
@@ -976,13 +976,13 @@ select:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 60px;
+  height: 80px;
   width: 140px;          /* fixed width - IMPORTANT */
   overflow: hidden;
 }
 
 .brand-item img {
-  max-height: 45px;
+  max-height: 100px;
   max-width: 100px;      /* prevent oversized images */
   width: auto;
   height: auto;
@@ -2891,333 +2891,236 @@ select:focus-visible {
   }
 }
 
-/* ---------- Service Explorer (About — What We Do): tab rail + crossfading stage ---------- */
-.explorer {
-  display: flex;
-  gap: 0;
-  border: 1px solid rgba(11, 18, 32, 0.1);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  background: var(--white);
+/* ---------- Flip-card grid (About — What We Do) ---------- */
+.flip-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
 }
 
-.explorer-tabs {
-  flex: 0 0 320px;
+.flip-card {
+  perspective: 1200px;
+  height: 210px;
+  cursor: pointer;
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform .6s cubic-bezier(.4, .2, .2, 1);
+}
+
+@media (hover:hover) {
+  .flip-card:hover .flip-inner {
+    transform: rotateY(180deg);
+  }
+}
+
+.flip-card.is-flipped .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: var(--radius-lg);
+  padding: 26px;
   display: flex;
   flex-direction: column;
-  border-right: 1px solid rgba(11, 18, 32, 0.1);
 }
 
-.explorer-tab {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  text-align: left;
-  background: none;
-  border: none;
-  border-left: 3px solid transparent;
-  border-bottom: 1px solid rgba(11, 18, 32, 0.08);
-  padding: 20px 24px;
-  cursor: pointer;
-  transition: background .3s, border-color .3s;
+.flip-front {
+  background: var(--white);
+  border: 1px solid rgba(11, 18, 32, 0.1);
+  justify-content: space-between;
 }
 
-.explorer-tab:last-child {
-  border-bottom: none;
-}
-
-.explorer-tab:hover {
-  background: var(--cream-100);
-}
-
-.explorer-tab.is-active {
-  background: var(--cream-100);
-  border-left-color: var(--gold-500);
-}
-
-.et-num {
+.flip-front .flip-num {
+  align-self: flex-end;
   font-family: var(--font-display);
   font-weight: 700;
   font-size: .85rem;
   color: var(--slate-400);
-  flex: none;
-  width: 26px;
 }
 
-.explorer-tab.is-active .et-num {
-  color: var(--gold-500);
-}
-
-.et-label {
-  font-size: .94rem;
-  color: var(--ink-900);
-  font-weight: 600;
-  line-height: 1.3;
-}
-
-.explorer-stage {
-  position: relative;
-  flex: 1;
-  min-height: 340px;
-  padding: 44px;
-  overflow: hidden;
-}
-
-.explorer-panel {
-  position: absolute;
-  inset: 0;
-  padding: 44px;
-  opacity: 0;
-  transform: translateY(14px);
-  pointer-events: none;
-  transition: opacity .45s ease, transform .45s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.explorer-panel.is-active {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.explorer-bg-icon {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 8rem;
-  color: var(--cream-100);
-  z-index: 0;
-}
-
-.explorer-index {
-  position: relative;
-  z-index: 1;
-  font-family: var(--font-display);
-  font-weight: 700;
-  color: var(--gold-500);
-  font-size: .85rem;
-  letter-spacing: .06em;
-  margin-bottom: 14px;
-}
-
-.explorer-panel h3 {
-  position: relative;
-  z-index: 1;
-  font-size: 1.7rem;
-  margin-bottom: 14px;
-}
-
-.explorer-panel p {
-  position: relative;
-  z-index: 1;
-  font-size: .98rem;
-  max-width: 440px;
-  margin-bottom: 0;
-}
-
-@media (max-width:850px) {
-  .explorer {
-    flex-direction: column;
-  }
-
-  .explorer-tabs {
-    flex-direction: row;
-    overflow-x: auto;
-    border-right: none;
-    border-bottom: 1px solid rgba(11, 18, 32, 0.1);
-  }
-
-  .explorer-tab {
-    flex: 0 0 auto;
-    border-left: none;
-    border-bottom: 3px solid transparent;
-    white-space: nowrap;
-  }
-
-  .explorer-tab.is-active {
-    border-left-color: transparent;
-    border-bottom-color: var(--gold-500);
-  }
-
-  .et-label {
-    font-size: .85rem;
-  }
-
-  .explorer-stage {
-    min-height: 220px;
-    padding: 30px 26px;
-  }
-
-  .explorer-panel {
-    padding: 30px 26px;
-  }
-
-  .explorer-bg-icon {
-    font-size: 5rem;
-    opacity: .6;
-  }
-}
-
-/* ---------- Reason ribbons (About — Why Ideora Careers): skewed full-width stripes ---------- */
-.ribbon-list {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.ribbon {
-  position: relative;
-  border-radius: 16px;
-  padding: 28px 40px;
-  overflow: hidden;
-  transition: transform .35s cubic-bezier(.2, .8, .2, 1);
-}
-
-.ribbon:hover {
-  transform: translateX(10px);
-}
-
-.ribbon::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: -8%;
-  right: -8%;
-  z-index: 0;
-  transform: skewX(-8deg);
-  transition: transform .4s;
-}
-
-.ribbon:hover::before {
-  transform: skewX(-8deg) scaleX(1.01);
-}
-
-.ribbon-content {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-
-.ribbon-icon {
-  width: 58px;
-  height: 58px;
+.flip-front .flip-icon {
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
-  flex: none;
+  background: var(--gold-100);
+  color: var(--gold-500);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.3rem;
+  font-size: 1.35rem;
 }
 
-.ribbon-text h4 {
-  font-size: 1.1rem;
-  margin-bottom: 6px;
-}
-
-.ribbon-text p {
-  font-size: .88rem;
+.flip-front h5 {
+  font-size: 1.08rem;
   margin-bottom: 0;
-  max-width: 560px;
 }
 
-.ribbon-mark {
-  position: relative;
-  z-index: 1;
-  margin-left: auto;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 2.2rem;
-  opacity: .18;
-  flex: none;
+.flip-front .flip-hint {
+  font-size: .72rem;
+  color: var(--slate-400);
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
-.ribbon.tone-ink::before {
+.flip-back {
   background: var(--ink-900);
-}
-
-.ribbon.tone-ink .ribbon-text h4 {
   color: var(--white);
+  transform: rotateY(180deg);
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  gap: 10px;
 }
 
-.ribbon.tone-ink .ribbon-text p {
-  color: rgba(255, 255, 255, 0.68);
-}
-
-.ribbon.tone-ink .ribbon-icon {
-  background: rgba(255, 255, 255, 0.12);
+.flip-back i {
+  font-size: 1.3rem;
   color: var(--gold-400);
 }
 
-.ribbon.tone-ink .ribbon-mark {
+.flip-back h5 {
+  color: var(--white);
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.flip-back p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: .85rem;
+  margin-bottom: 0;
+}
+
+@media (max-width:900px) {
+  .flip-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width:560px) {
+  .flip-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .flip-card {
+    height: 190px;
+  }
+}
+
+/* ---------- Reason panels (About — Why Ideora Careers): horizontal color-block scroller ---------- */
+.reason-scroller {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 10px 4px 26px;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold-500) transparent;
+}
+
+.reason-scroller::-webkit-scrollbar {
+  height: 6px;
+}
+
+.reason-scroller::-webkit-scrollbar-thumb {
+  background: var(--gold-500);
+  border-radius: 10px;
+}
+
+.reason-panel {
+  flex: 0 0 auto;
+  width: 270px;
+  min-height: 300px;
+  border-radius: var(--radius-lg);
+  padding: 32px 26px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+  transition: transform .4s cubic-bezier(.2, .8, .2, 1);
+}
+
+.reason-panel:hover {
+  transform: translateY(-8px);
+}
+
+.reason-panel .reason-icon {
+  font-size: 1.8rem;
+  margin-bottom: 60px;
+}
+
+.reason-panel h4 {
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+}
+
+.reason-panel p {
+  font-size: .86rem;
+  margin-bottom: 0;
+}
+
+.reason-panel.tone-ink {
+  background: var(--ink-900);
   color: var(--white);
 }
 
-.ribbon.tone-gold::before {
-  background: linear-gradient(120deg, var(--gold-400), var(--gold-500));
+.reason-panel.tone-ink h4 {
+  color: var(--white);
 }
 
-.ribbon.tone-gold .ribbon-text h4,
-.ribbon.tone-gold .ribbon-text p {
+.reason-panel.tone-ink p {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.reason-panel.tone-ink .reason-icon {
+  color: var(--gold-400);
+}
+
+.reason-panel.tone-gold {
+  background: linear-gradient(150deg, var(--gold-400), var(--gold-500));
   color: var(--ink-900);
 }
 
-.ribbon.tone-gold .ribbon-icon {
-  background: rgba(11, 18, 32, 0.14);
+.reason-panel.tone-gold .reason-icon {
   color: var(--ink-900);
+  opacity: .75;
 }
 
-.ribbon.tone-gold .ribbon-mark {
-  color: var(--ink-900);
+.reason-panel.tone-cream {
+  background: var(--white);
+  border: 1px solid rgba(11, 18, 32, 0.1);
 }
 
-.ribbon.tone-cream::before {
-  background: var(--cream-100);
-}
-
-.ribbon.tone-cream .ribbon-text h4 {
-  color: var(--ink-900);
-}
-
-.ribbon.tone-cream .ribbon-text p {
-  color: var(--slate-600);
-}
-
-.ribbon.tone-cream .ribbon-icon {
-  background: var(--gold-100);
+.reason-panel.tone-cream .reason-icon {
   color: var(--gold-500);
 }
 
-.ribbon.tone-cream .ribbon-mark {
-  color: var(--ink-900);
+.reason-panel .reason-mark {
+  position: absolute;
+  top: 20px;
+  right: 22px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: .78rem;
+  opacity: .5;
 }
 
-@media (max-width:650px) {
-  .ribbon {
-    padding: 22px 22px;
-  }
-
-  .ribbon::before {
-    transform: skewX(-5deg);
-    left: -5%;
-    right: -5%;
-  }
-
-  .ribbon:hover::before {
-    transform: skewX(-5deg) scaleX(1.01);
-  }
-
-  .ribbon-content {
-    gap: 14px;
-    flex-wrap: wrap;
-  }
-
-  .ribbon-mark {
-    display: none;
+@media (max-width:575px) {
+  .reason-panel {
+    width: 230px;
+    min-height: 270px;
+    padding: 26px 22px;
   }
 }
 
@@ -3266,200 +3169,15 @@ select:focus-visible {
   margin-bottom: 14px;
 }
 
-/* ---------- Expanding accordion strip (About — What We Do) ----------
-   Six panels sit side-by-side, collapsed to a thin rail showing a rotated
-   label + icon. Click (or hover on pointer devices) expands one panel at
-   a time to reveal the full title + description, panels compress via flex. */
-.acc-strip {
-  display: flex;
-  gap: 8px;
-  height: 400px;
-}
 
-.acc-panel {
-  position: relative;
-  flex: 1;
-  border-radius: 18px;
-  overflow: hidden;
-  cursor: pointer;
-  background: var(--ink-900);
-  transition: flex .55s cubic-bezier(.4, 0, .2, 1);
-}
 
-.acc-panel.is-open {
-  flex: 3.6;
-}
 
-@media (hover:hover) {
-  .acc-strip:not(:has(.acc-panel.is-open)) .acc-panel:hover {
-    flex: 3.6;
-  }
-}
 
-.acc-panel::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.35), transparent 55%);
-  opacity: 0;
-  transition: opacity .4s;
-}
 
-.acc-panel.is-open::after {
-  opacity: 1;
-}
 
-.acc-panel:nth-child(2) {
-  background: #1B2740;
-}
 
-.acc-panel:nth-child(3) {
-  background: var(--ink-900);
-}
 
-.acc-panel:nth-child(4) {
-  background: #1B2740;
-}
 
-.acc-panel:nth-child(5) {
-  background: var(--ink-900);
-}
-
-.acc-panel:nth-child(6) {
-  background: #1B2740;
-}
-
-.acc-panel-inner {
-  position: absolute;
-  inset: 0;
-  padding: 26px 18px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  color: #fff;
-}
-
-.acc-index {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: .85rem;
-  color: var(--gold-400);
-  opacity: .75;
-}
-
-.acc-collapsed {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 18px;
-  flex: 1;
-  justify-content: flex-end;
-  padding-bottom: 6px;
-  transition: opacity .25s;
-}
-
-.acc-panel.is-open .acc-collapsed {
-  opacity: 0;
-  pointer-events: none;
-  position: absolute;
-}
-
-.acc-collapsed .acc-icon {
-  font-size: 1.3rem;
-  color: var(--gold-400);
-}
-
-.acc-collapsed .acc-label {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  font-weight: 700;
-  font-size: .92rem;
-  letter-spacing: .02em;
-  white-space: nowrap;
-}
-
-.acc-expanded {
-  opacity: 0;
-  transition: opacity .35s .15s;
-}
-
-.acc-panel.is-open .acc-expanded {
-  opacity: 1;
-}
-
-.acc-expanded .acc-icon-lg {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: rgba(255, 148, 18, 0.18);
-  color: var(--gold-400);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.3rem;
-  margin-bottom: 16px;
-}
-
-.acc-expanded h5 {
-  color: #fff;
-  font-size: 1.15rem;
-  margin-bottom: 10px;
-}
-
-.acc-expanded p {
-  color: rgba(255, 255, 255, 0.72);
-  font-size: .86rem;
-  margin-bottom: 0;
-}
-
-@media (max-width:850px) {
-  .acc-strip {
-    flex-direction: column;
-    height: auto;
-    gap: 10px;
-  }
-
-  .acc-panel {
-    height: 64px;
-    flex: none !important;
-  }
-
-  .acc-panel.is-open {
-    height: 210px;
-  }
-
-  .acc-panel-inner {
-    flex-direction: row;
-    align-items: center;
-    padding: 0 18px;
-  }
-
-  .acc-collapsed {
-    flex-direction: row;
-    flex: 1;
-    justify-content: flex-start;
-    padding-bottom: 0;
-    gap: 14px;
-  }
-
-  .acc-collapsed .acc-label {
-    writing-mode: horizontal-tb;
-    transform: none;
-  }
-
-  .acc-panel.is-open .acc-panel-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 20px 18px;
-  }
-
-  .acc-index {
-    position: absolute;
-    top: 14px;
-    right: 18px;
-  }
-}
 
 /* ---------- Featured Programs (asymmetric: big feature card + program list) ---------- */
 .featured-program {

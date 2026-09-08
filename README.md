@@ -62,7 +62,7 @@ deploy the folder as-is.
 3. **Colors/fonts** — change the `:root` variables at the top of
    `assets/css/style.css`; every component references them, so a palette
    swap only needs edits in one place.
-4. **Phone/WhatsApp/email** — search-and-replace `+911234567890` and
+4. **Phone/WhatsApp/email** — search-and-replace `+916282607450` and
    `hello@horizonabroad.com` across all 5 HTML files (they're repeated in
    the floating buttons, footer, and contact sections).
 5. **Map** — swap the Google Maps embed `src` in `contact.html` for your

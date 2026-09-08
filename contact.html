@@ -21,18 +21,24 @@
 
 <div class="nav-backdrop"></div>
 <nav class="navbar-luxe">
-  <div class="container-xl">
-    <a href="index.html" class="navbar-brand-luxe"><i class="fa-solid fa-globe" style="color:#FFB157;"></i> <span>Ide</span>ora</a>
-    <ul class="nav-links-luxe">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="courses.html">Courses</a></li>
-      <li><a href="contact.html" class="active">Contact</a></li>
-      <li><a href="contact.html#quote" class="btn-luxe btn-luxe-primary d-inline-flex">Get Quote</a></li>
-    </ul>
-    <button class="navbar-toggler-luxe" aria-label="Open menu" aria-expanded="false" type="button"><i class="fa-solid fa-bars"></i></button>
-  </div>
+    <div class="container-xl">
+      <a href="index.html" class="navbar-brand-luxe">
+        <img src="assets/img/logo.png" class="img-fluid" width="150">
+      </a>
+      <ul class="nav-links-luxe">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="contact.html#quote" class="btn-luxe btn-luxe-primary d-inline-flex p-2">Get Quote</a></li>
+        <li>
+        </li>
+      </ul>
+      <button class="navbar-toggler-luxe" aria-label="Open menu" aria-expanded="false" type="button">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
 </nav>
 
 <header class="page-header">
@@ -50,9 +56,10 @@
         <div class="contact-info-card">
           <div class="eyebrow" style="color:#FFB157;">Reach Us</div>
           <h3 style="color:#fff; margin-bottom:20px;">We usually reply within a few hours</h3>
-          <div class="contact-info-row"><i class="fa-solid fa-phone"></i><div><h5>Call Us</h5><p>+91 12345 67890</p></div></div>
-          <div class="contact-info-row"><i class="fa-solid fa-envelope"></i><div><h5>Email Us</h5><p>hello@ideora.com</p></div></div>
-          <div class="contact-info-row"><i class="fa-solid fa-location-dot"></i><div><h5>Visit Us</h5><p>4th Floor, Ideora Tower, Nagercoil, Tamil Nadu, India</p></div></div>
+          <div class="contact-info-row"><i class="fa-solid fa-phone"></i><div><h5>Call Us</h5><p>+91 6282607450 &nbsp;&nbsp; | &nbsp;&nbsp; +91 7012355431</p></div></div>
+          <div class="contact-info-row"><i class="fa-solid fa-envelope"></i><div><h5>Email Us</h5><p>info.ideora@gmail.com</p></div></div>
+          <div class="contact-info-row"><i class="fa-solid fa-location-dot"></i><div><h5>Visit Us</h5><p>BIZHAUS Office, Lower Ground Floor, TC 2833/7, Pavithra Enclave, C Street, Jawahar Nagar, Kowdiar P.O., Thiruvananthapuram- 695003.</p><br>
+                <p>Room No :3 Ground floor , Heather land shopping complex , Opposite Metro Pillar No P - 565 , Deshabhimani Junction , Kaloor , Cochin - 17</p></div></div>
           <div class="contact-info-row"><i class="fa-solid fa-clock"></i><div><h5>Business Hours</h5><p>Mon–Fri 9:30 AM–7 PM · Sat 10 AM–5 PM</p></div></div>
           <div class="social-row">
             <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
@@ -66,35 +73,41 @@
         <div class="form-luxe">
           <h3 style="margin-bottom:6px;">Send us a message</h3>
           <p style="font-size:.9rem; margin-bottom:24px;">Tell us a little about your goals — a counsellor will follow up personally.</p>
-          <form id="contactForm" novalidate>
-            <div class="row g-3">
-              <div class="col-md-6">
-                <label class="form-label">Full Name</label>
-                <input type="text" class="form-control" name="name" required>
+            <form id="contactForm" novalidate>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label">Full Name</label>
+                  <input type="text" class="form-control" name="name" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Phone</label>
+                  <input type="tel" class="form-control" name="phone" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Preferred Country</label>
+                  <input type="text" class="form-control" name="country" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Qualification</label>
+                  <input type="text" class="form-control" name="qualification" required>
+                </div>
+                <div class="col-12">
+                  <label class="form-label">Message</label>
+                  <textarea class="form-control" rows="4" name="message" required></textarea>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn-luxe btn-luxe-primary w-100 justify-content-center">Send Message <i
+                      class="fa-solid fa-paper-plane"></i></button>
+                </div>
               </div>
-              <div class="col-md-6">
-                <label class="form-label">Phone</label>
-                <input type="tel" class="form-control" name="phone" required>
-              </div>
-              <div class="col-12">
-                <label class="form-label">Email</label>
-                <input type="email" class="form-control" name="email" required>
-              </div>
-              <div class="col-12">
-                <label class="form-label">Message</label>
-                <textarea class="form-control" rows="5" name="message" placeholder="Which country and course are you considering?" required></textarea>
-              </div>
-              <div class="col-12">
-                <button type="submit" class="btn-luxe btn-luxe-primary w-100 justify-content-center">Send Message <i class="fa-solid fa-paper-plane"></i></button>
-              </div>
+            </form>
+            <div class="form-success">
+              <i class="fa-solid fa-circle-check"></i>
+              <h4>Message sent!</h4>
+              <p>A counsellor will reach out within one business day.</p>
             </div>
-          </form>
-          <div class="form-success">
-            <i class="fa-solid fa-circle-check"></i>
-            <h4>Message sent!</h4>
-            <p>A counsellor will reach out within one business day.</p>
           </div>
-        </div>
+
       </div>
     </div>
   </div>
@@ -103,15 +116,27 @@
 <!-- ================= MAP ================= -->
 <section class="section-sm bg-cream-alt">
   <div class="container-xl reveal">
-    <iframe class="map-frame" title="Ideora office location" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-      src="https://www.google.com/maps?q=Nagercoil,Tamil+Nadu,India&output=embed"></iframe>
+    <div class="row">
+      <div class="col-md-6">
+        <span class="service-detail-number">01 — Thiruvananthapuram</span>
+      <iframe class="map-frame" title="Ideora office location" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2323.7264217882503!2d76.96466163206455!3d8.51578791669746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05bb660861d1ef%3A0xb486c5d656a6aea9!2sBizhaus%20Business%20Centre!5e0!3m2!1sen!2sin!4v1788850018275!5m2!1sen!2sin"></iframe>
+    </div>
+    <div class="col-md-6">
+      <span class="service-detail-number">02 — Cochin</span>
+      <iframe class="map-frame" title="Ideora office location" loading="lazy" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.2349752480372!2d76.29331335554627!3d9.997439298359389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d00643cc9c9%3A0xee4460421bfcba7c!2sIDEORA%20CAREERS%20COCHIN!5e0!3m2!1sen!2sin!4v1788849853309!5m2!1sen!2sin"></iframe>
+    </div>
+    </div>
+    
+    
   </div>
 </section>
 
 <div class="floating-actions">
   <button class="fab fab-top" aria-label="Back to top" type="button"><i class="fa-solid fa-arrow-up"></i></button>
-  <a class="fab fab-call" href="tel:+911234567890" aria-label="Call us"><i class="fa-solid fa-phone"></i></a>
-  <a class="fab fab-whatsapp" href="https://wa.me/911234567890" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+  <a class="fab fab-call" href="tel:+916282607450" aria-label="Call us"><i class="fa-solid fa-phone"></i></a>
+  <a class="fab fab-whatsapp" href="https://wa.me/916282607450" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
 </div>
 
 <footer class="footer-luxe">
@@ -156,8 +181,8 @@
         </ul>
         <h5 class="mt-4">Contact</h5>
         <ul>
-          <li><i class="fa-solid fa-phone me-2" style="color:#FFB157;"></i> +91 12345 67890</li>
-          <li><i class="fa-solid fa-envelope me-2" style="color:#FFB157;"></i> hello@ideora.com</li>
+          <li><i class="fa-solid fa-phone me-2" style="color:#FFB157;"></i> +91 62826 07450</li>
+          <li><i class="fa-solid fa-envelope me-2" style="color:#FFB157;"></i> info.ideora@gmail.com</li>
         </ul>
       </div>
     </div>

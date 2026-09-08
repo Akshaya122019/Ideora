@@ -21,19 +21,26 @@
 
 <div class="nav-backdrop"></div>
 <nav class="navbar-luxe">
-  <div class="container-xl">
-    <a href="index.html" class="navbar-brand-luxe"><i class="fa-solid fa-globe" style="color:#FFB157;"></i> <span>Ide</span>ora</a>
-    <ul class="nav-links-luxe">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" class="active">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="courses.html">Courses</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="contact.html#quote" class="btn-luxe btn-luxe-primary d-inline-flex">Get Quote</a></li>
-    </ul>
-    <button class="navbar-toggler-luxe" aria-label="Open menu" aria-expanded="false" type="button"><i class="fa-solid fa-bars"></i></button>
-  </div>
-</nav>
+    <div class="container-xl">
+      <a href="index.html" class="navbar-brand-luxe">
+        <img src="assets/img/logo.png" class="img-fluid" width="150">
+      </a>
+      <ul class="nav-links-luxe">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html#quote" class="btn-luxe btn-luxe-primary d-inline-flex p-2">Get Quote</a></li>
+        <li>
+        </li>
+      </ul>
+      <button class="navbar-toggler-luxe" aria-label="Open menu" aria-expanded="false" type="button">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
 
 <header class="page-header">
   <div class="container-xl">
@@ -61,7 +68,7 @@
       <div class="col-lg-6 reveal">
         <div class="eyebrow">About Ideora Careers</div>
         <h2 class="section-title">Making the journey abroad <span class="text-gold">clearer, and more personal</span></h2>
-        <p>At Ideora Careers, we believe that studying or building a career abroad is more than simply choosing a country or securing an admission. It is a decision that can shape your education, career and future.</p>
+        <p class="fs-7">At Ideora Careers, we believe that studying or building a career abroad is more than simply choosing a country or securing an admission. It is a decision that can shape your education, career and future.</p>
         <p>Our student guidance journey began in 2022, and since then, we have guided 100+ students in exploring international education opportunities and planning their next steps with greater clarity and confidence.</p>
         <p>Our goal is simple: to make the journey towards studying and building a future abroad clearer, more informed and more personalized.</p>
       </div>
@@ -100,83 +107,99 @@
     <div class="text-center mb-5 reveal" style="max-width:680px; margin-left:auto; margin-right:auto;">
       <div class="eyebrow justify-content-center">What We Do</div>
       <h2 class="section-title">Structured guidance, at every step</h2>
-      <p class="section-lead mx-auto">Six services, one continuous plan. Click a panel to open it.</p>
+      <p class="section-lead mx-auto">Six services, one continuous plan. Tap or hover a card to see what it covers.</p>
     </div>
 
-    <div class="acc-strip reveal" role="tablist" aria-label="What We Do services">
-
-      <div class="acc-panel is-open" tabindex="0" role="tab" aria-selected="true" data-icon="fa-user-graduate">
-        <div class="acc-panel-inner">
-          <span class="acc-index">01</span>
-          <div class="acc-collapsed"><i class="fa-solid fa-user-graduate acc-icon"></i><span class="acc-label">Profile &amp; Career Assessment</span></div>
-          <div class="acc-expanded">
-            <div class="acc-icon-lg"><i class="fa-solid fa-user-graduate"></i></div>
+    <div class="flip-grid reveal-stagger">
+      <div class="flip-card" tabindex="0">
+        <div class="flip-inner">
+          <div class="flip-face flip-front">
+            <span class="flip-num">01</span>
+            <div><div class="flip-icon"><i class="fa-solid fa-user-graduate"></i></div></div>
+            <div><h5>Profile &amp; Career Assessment</h5><span class="flip-hint"><i class="fa-solid fa-arrow-rotate-right"></i> Hover to read more</span></div>
+          </div>
+          <div class="flip-face flip-back">
+            <i class="fa-solid fa-user-graduate"></i>
             <h5>Profile &amp; Career Assessment</h5>
             <p>Understand your academic background, interests and future goals.</p>
           </div>
         </div>
       </div>
 
-      <div class="acc-panel" tabindex="0" role="tab" aria-selected="false" data-icon="fa-book-open">
-        <div class="acc-panel-inner">
-          <span class="acc-index">02</span>
-          <div class="acc-collapsed"><i class="fa-solid fa-book-open acc-icon"></i><span class="acc-label">Course Selection</span></div>
-          <div class="acc-expanded">
-            <div class="acc-icon-lg"><i class="fa-solid fa-book-open"></i></div>
+      <div class="flip-card" tabindex="0">
+        <div class="flip-inner">
+          <div class="flip-face flip-front">
+            <span class="flip-num">02</span>
+            <div><div class="flip-icon"><i class="fa-solid fa-book-open"></i></div></div>
+            <div><h5>Course Selection</h5><span class="flip-hint"><i class="fa-solid fa-arrow-rotate-right"></i> Hover to read more</span></div>
+          </div>
+          <div class="flip-face flip-back">
+            <i class="fa-solid fa-book-open"></i>
             <h5>Course Selection</h5>
             <p>Explore courses that align with your profile and career aspirations.</p>
           </div>
         </div>
       </div>
 
-      <div class="acc-panel" tabindex="0" role="tab" aria-selected="false" data-icon="fa-list-check">
-        <div class="acc-panel-inner">
-          <span class="acc-index">03</span>
-          <div class="acc-collapsed"><i class="fa-solid fa-list-check acc-icon"></i><span class="acc-label">University Shortlisting</span></div>
-          <div class="acc-expanded">
-            <div class="acc-icon-lg"><i class="fa-solid fa-list-check"></i></div>
+      <div class="flip-card" tabindex="0">
+        <div class="flip-inner">
+          <div class="flip-face flip-front">
+            <span class="flip-num">03</span>
+            <div><div class="flip-icon"><i class="fa-solid fa-list-check"></i></div></div>
+            <div><h5>University Shortlisting</h5><span class="flip-hint"><i class="fa-solid fa-arrow-rotate-right"></i> Hover to read more</span></div>
+          </div>
+          <div class="flip-face flip-back">
+            <i class="fa-solid fa-list-check"></i>
             <h5>University Shortlisting</h5>
             <p>Identify suitable universities based on eligibility, affordability, location and your goals.</p>
           </div>
         </div>
       </div>
 
-      <div class="acc-panel" tabindex="0" role="tab" aria-selected="false" data-icon="fa-file-lines">
-        <div class="acc-panel-inner">
-          <span class="acc-index">04</span>
-          <div class="acc-collapsed"><i class="fa-solid fa-file-lines acc-icon"></i><span class="acc-label">Application Support</span></div>
-          <div class="acc-expanded">
-            <div class="acc-icon-lg"><i class="fa-solid fa-file-lines"></i></div>
+      <div class="flip-card" tabindex="0">
+        <div class="flip-inner">
+          <div class="flip-face flip-front">
+            <span class="flip-num">04</span>
+            <div><div class="flip-icon"><i class="fa-solid fa-file-lines"></i></div></div>
+            <div><h5>Application Support</h5><span class="flip-hint"><i class="fa-solid fa-arrow-rotate-right"></i> Hover to read more</span></div>
+          </div>
+          <div class="flip-face flip-back">
+            <i class="fa-solid fa-file-lines"></i>
             <h5>Application Support</h5>
             <p>Get structured assistance throughout the university application process.</p>
           </div>
         </div>
       </div>
 
-      <div class="acc-panel" tabindex="0" role="tab" aria-selected="false" data-icon="fa-passport">
-        <div class="acc-panel-inner">
-          <span class="acc-index">05</span>
-          <div class="acc-collapsed"><i class="fa-solid fa-passport acc-icon"></i><span class="acc-label">Visa Guidance</span></div>
-          <div class="acc-expanded">
-            <div class="acc-icon-lg"><i class="fa-solid fa-passport"></i></div>
+      <div class="flip-card" tabindex="0">
+        <div class="flip-inner">
+          <div class="flip-face flip-front">
+            <span class="flip-num">05</span>
+            <div><div class="flip-icon"><i class="fa-solid fa-passport"></i></div></div>
+            <div><h5>Visa Guidance</h5><span class="flip-hint"><i class="fa-solid fa-arrow-rotate-right"></i> Hover to read more</span></div>
+          </div>
+          <div class="flip-face flip-back">
+            <i class="fa-solid fa-passport"></i>
             <h5>Visa Guidance</h5>
             <p>Support with documentation and the visa application process.</p>
           </div>
         </div>
       </div>
 
-      <div class="acc-panel" tabindex="0" role="tab" aria-selected="false" data-icon="fa-plane-departure">
-        <div class="acc-panel-inner">
-          <span class="acc-index">06</span>
-          <div class="acc-collapsed"><i class="fa-solid fa-plane-departure acc-icon"></i><span class="acc-label">Pre-Departure Support</span></div>
-          <div class="acc-expanded">
-            <div class="acc-icon-lg"><i class="fa-solid fa-plane-departure"></i></div>
+      <div class="flip-card" tabindex="0">
+        <div class="flip-inner">
+          <div class="flip-face flip-front">
+            <span class="flip-num">06</span>
+            <div><div class="flip-icon"><i class="fa-solid fa-plane-departure"></i></div></div>
+            <div><h5>Pre-Departure Support</h5><span class="flip-hint"><i class="fa-solid fa-arrow-rotate-right"></i> Hover to read more</span></div>
+          </div>
+          <div class="flip-face flip-back">
+            <i class="fa-solid fa-plane-departure"></i>
             <h5>Pre-Departure Support</h5>
             <p>Prepare for your transition to studying and living abroad.</p>
           </div>
         </div>
       </div>
-
     </div>
 
     <p class="text-center reveal" style="max-width:720px; margin:36px auto 0; color:var(--slate-600); font-size:.9rem;">Beyond overseas education, Ideora Careers also provides guidance for selected international visa and immigration pathways, helping eligible individuals explore opportunities beyond the traditional study route.</p>
@@ -184,53 +207,26 @@
 </section>
 
 <!-- ================= WHY IDEORA CAREERS ================= -->
-<section class="section bg-cream-alt">
+<section class="section bg-cream-alt" style="padding-left:0; padding-right:0;">
   <div class="container-xl">
     <div class="text-center mb-5 reveal">
       <div class="eyebrow justify-content-center">Why Ideora Careers?</div>
       <h2 class="section-title">Guidance built around you</h2>
     </div>
-    <div class="ribbon-list reveal-stagger">
-      <div class="ribbon tone-ink">
-        <div class="ribbon-content">
-          <div class="ribbon-icon"><i class="fa-solid fa-bullseye"></i></div>
-          <div class="ribbon-text"><h4>Personalized Guidance</h4><p>We start with your profile, goals and circumstances — not a one-size-fits-all recommendation.</p></div>
-        </div>
-        <span class="ribbon-mark">01</span>
-      </div>
-      <div class="ribbon tone-gold">
-        <div class="ribbon-content">
-          <div class="ribbon-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
-          <div class="ribbon-text"><h4>Informed Decisions</h4><p>We help you understand your course, university, destination, eligibility and requirements before you decide.</p></div>
-        </div>
-        <span class="ribbon-mark">02</span>
-      </div>
-      <div class="ribbon tone-cream">
-        <div class="ribbon-content">
-          <div class="ribbon-icon"><i class="fa-solid fa-rocket"></i></div>
-          <div class="ribbon-text"><h4>Career-Focused Approach</h4><p>We look beyond admission — considering how your education supports your long-term career goals.</p></div>
-        </div>
-        <span class="ribbon-mark">03</span>
-      </div>
-      <div class="ribbon tone-cream">
-        <div class="ribbon-content">
-          <div class="ribbon-icon"><i class="fa-solid fa-handshake"></i></div>
-          <div class="ribbon-text"><h4>End-to-End Support</h4><p>From your first consultation through applications, visa guidance and pre-departure prep — organized, stress-free.</p></div>
-        </div>
-        <span class="ribbon-mark">04</span>
-      </div>
-      <div class="ribbon tone-ink">
-        <div class="ribbon-content">
-          <div class="ribbon-icon"><i class="fa-solid fa-comments"></i></div>
-          <div class="ribbon-text"><h4>Transparent Communication</h4><p>We believe students deserve clear and honest information throughout their journey.</p></div>
-        </div>
-        <span class="ribbon-mark">05</span>
-      </div>
+  </div>
+  <div class="container-xl">
+    <div class="reason-scroller reveal">
+      <div class="reason-panel tone-ink"><span class="reason-mark">01</span><div class="reason-icon"><i class="fa-solid fa-bullseye"></i></div><h4>Personalized Guidance</h4><p>We start with your profile, goals and circumstances — not a one-size-fits-all recommendation.</p></div>
+      <div class="reason-panel tone-gold"><span class="reason-mark">02</span><div class="reason-icon"><i class="fa-solid fa-magnifying-glass"></i></div><h4>Informed Decisions</h4><p>We help you understand your course, university, destination, eligibility and requirements before you decide.</p></div>
+      <div class="reason-panel tone-cream"><span class="reason-mark">03</span><div class="reason-icon"><i class="fa-solid fa-rocket"></i></div><h4>Career-Focused Approach</h4><p>We look beyond admission — considering how your education supports your long-term career goals.</p></div>
+      <div class="reason-panel tone-cream"><span class="reason-mark">04</span><div class="reason-icon"><i class="fa-solid fa-handshake"></i></div><h4>End-to-End Support</h4><p>From your first consultation through applications, visa guidance and pre-departure prep — organized, stress-free.</p></div>
+      <div class="reason-panel tone-ink"><span class="reason-mark">05</span><div class="reason-icon"><i class="fa-solid fa-comments"></i></div><h4>Transparent Communication</h4><p>We believe students deserve clear and honest information throughout their journey.</p></div>
     </div>
+    <p class="text-center d-lg-none" style="font-size:.78rem; color:var(--slate-400);"><i class="fa-solid fa-arrows-left-right"></i> Swipe to see all reasons</p>
   </div>
 </section>
 
-<!-- ================= OUR VISION ================= -->
+ <!-- ================= OUR VISION ================= -->
 <section class="section">
   <div class="container-xl">
     <div class="vision-banner reveal">
@@ -240,7 +236,7 @@
   </div>
 </section>
 
-<!-- ================= CLOSING STAT / TAGLINE ================= -->
+  <!-- ================= CLOSING STAT / TAGLINE ================= -->
 <section class="section-sm bg-ink">
   <div class="container-xl text-center reveal">
     <div class="closing-stat">
@@ -254,8 +250,8 @@
 
 <div class="floating-actions">
   <button class="fab fab-top" aria-label="Back to top" type="button"><i class="fa-solid fa-arrow-up"></i></button>
-  <a class="fab fab-call" href="tel:+911234567890" aria-label="Call us"><i class="fa-solid fa-phone"></i></a>
-  <a class="fab fab-whatsapp" href="https://wa.me/911234567890" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+  <a class="fab fab-call" href="tel:+916282607450" aria-label="Call us"><i class="fa-solid fa-phone"></i></a>
+  <a class="fab fab-whatsapp" href="https://wa.me/916282607450" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
 </div>
 
 <footer class="footer-luxe">
@@ -300,8 +296,8 @@
         </ul>
         <h5 class="mt-4">Contact</h5>
         <ul>
-          <li><i class="fa-solid fa-phone me-2" style="color:#FFB157;"></i> +91 12345 67890</li>
-          <li><i class="fa-solid fa-envelope me-2" style="color:#FFB157;"></i> hello@ideora.com</li>
+          <li><i class="fa-solid fa-phone me-2" style="color:#FFB157;"></i> +91 62826 07450</li>
+          <li><i class="fa-solid fa-envelope me-2" style="color:#FFB157;"></i> info.ideora@gmail.com</li>
         </ul>
       </div>
     </div>
