@@ -256,7 +256,7 @@ $('#contactForm').on('submit', function (e) {
     "*Qualification:* " + qualification + "%0A" +
     "*Message:* " + message;
 
-  var companyNumber = "919944688648"; // replace with real number: country code + number, digits only
+  var companyNumber = "916282607450"; 
 
   var $btn = $form.find('button[type="submit"]');
   $btn.prop('disabled', true).html('<i class="fa-solid fa-spinner fa-spin"></i> Sending...');
